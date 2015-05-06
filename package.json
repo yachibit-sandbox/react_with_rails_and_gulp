@@ -4,5 +4,9 @@
   "description": "== README",
   "main": "index.js",
   "author": "yachibit",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "browserify": "^10.1.0",
+    "gulp": "^3.8.11"
+  }
 }
