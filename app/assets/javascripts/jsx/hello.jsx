@@ -1,7 +1,7 @@
 var React = require('react');
 
 var Hello = React.createClass({
-  render: function() {
+  render() {
     return (
       <div>
         <h1>Hello!!</h1>
@@ -10,7 +10,7 @@ var Hello = React.createClass({
   }
 });
 
-$(function() {
+$(() => {
   React.render(
     <Hello />, document.getElementById('hello')
   );
