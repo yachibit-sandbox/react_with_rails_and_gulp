@@ -10,7 +10,7 @@ gulp.task 'default', ->
     entries: ['./app/assets/javascripts/jsx/hello.jsx']
     transform: 'reactify'
   b.bundle()
-  .pipe source 'app.js'
-  .pipe gulp.dest './app/assets/javascripts/'
+  .pipe source 'bundle.js'
+  .pipe gulp.dest 'public/assets'
 
   console.log 'end default'
