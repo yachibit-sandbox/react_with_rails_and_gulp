@@ -1,13 +1,12 @@
 gulp = require 'gulp'
-browserify = require 'browserify'
-source = require 'vinyl-source-stream'
-reactify = require 'reactify'
+babel = require 'gulp-babel'
 
-gulp.task 'default', ->
-  browserify
-    entries: ['./app/assets/javascripts/jsx/hello.jsx']
-  .transform 'babelify'
-  .transform 'reactify'
-  .bundle()
-  .pipe source 'bundle.js'
-  .pipe gulp.dest 'public/assets'
+gulp.task 'build', ->
+  gulp.src './frontend/javascripts/**/*.{js,jsx,coffee}'
+  .pipe babel()
+  .pipe gulp.dest 'app/assets/javascripts/components'
+
+gulp.task 'watch', ->
+  gulp.watch('./frontend/javascripts/**/*.{js,jsx,coffee}', ['build'])
+
+gulp.task 'default', ['build']

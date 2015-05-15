@@ -19,3 +19,4 @@
 
 /node_modules
 /public/assets
+/app/assets/javascripts/components
