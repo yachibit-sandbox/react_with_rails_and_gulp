@@ -1,9 +1,16 @@
 gulp = require 'gulp'
 babel = require 'gulp-babel'
+browserify = require 'browserify'
+source = require 'vinyl-source-stream'
+glob = require 'glob'
 
 gulp.task 'build', ->
-  gulp.src './frontend/javascripts/**/*.{js,jsx,coffee}'
-  .pipe babel()
+  files = glob.sync './frontend/javascripts/**/*.{js,jsx,coffee}'
+  browserify
+    entries: files
+  .transform 'babelify'
+  .bundle()
+  .pipe source 'bundle.js'
   .pipe gulp.dest 'app/assets/javascripts/components'
 
 gulp.task 'watch', ->
