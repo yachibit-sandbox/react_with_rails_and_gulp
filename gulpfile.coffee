@@ -7,7 +7,8 @@ glob = require 'glob'
 gulp.task 'build', ->
   files = glob.sync './frontend/javascripts/**/*.{js,jsx,coffee}'
   browserify
-    entries: files
+    entries: files,
+    debug: true
   .transform 'babelify'
   .bundle()
   .pipe source 'bundle.js'
