@@ -7,6 +7,7 @@
   "license": "ISC",
   "scripts": {
     "build": "gulp",
+    "test": "mocha --opts test/javascripts/mocha.opts test/javascripts/*.js",
     "watch": "gulp watch"
   },
   "dependencies": {
@@ -19,6 +20,10 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "devDependencies": {
-    "gulp": "^3.8.11"
+    "espower-babel": "^3.1.1",
+    "gulp": "^3.8.11",
+    "jsdom": "^3.1.2",
+    "mocha": "^2.2.5",
+    "power-assert": "^0.11.0"
   }
 }
