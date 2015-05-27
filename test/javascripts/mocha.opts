@@ -1,0 +1,3 @@
+--compilers js:espower-babel/guess
+--require espower-babel/guess
+--require test/javascripts/helper

@@ -1,3 +1,5 @@
+var React = require('react')
+
 window.Hello = React.createClass({
   render() {
     return (
@@ -7,3 +9,5 @@ window.Hello = React.createClass({
     );
   }
 });
+
+export default window.Hello;
